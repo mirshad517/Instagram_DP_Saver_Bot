@@ -16,7 +16,7 @@ START_MSG = '''*Welcome To the Bot🖐🖐*
 
 _Send me anyones instagram username to get their DP_
 
-*ex :* `mrk_yt_`...., *etc*'''
+*ex :* `mirshad_kvr`...., *etc*'''
 
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO
@@ -39,7 +39,7 @@ def start(update, context):
     update.message.reply_text(
         START_MSG,
         parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton("How To Own & Use", url="https://youtu.be/6AlELqY_w6o")]]))
+                    [[InlineKeyboardButton("How To Own & Use", url="")]]))
 
 def help_msg(update, context):
     update.message.reply_text("Enter Your Instagram UserName")
@@ -63,7 +63,7 @@ def username(update, context):
     try:
         user = Profile.from_username(L.context, query)
         caption_msg = f'''♥️*Name*♥️: {user.full_name} \n😁*Followers*😁: {user.followers} \n🤩*Following*🤩: {user.followees}\
-         \n🧐*Account Type*🧐: {acc_type(user.is_private)}\n🤪*Bio🤪*: {user.biography}\n👀*Midia*👀 {user.mediacount} \n\n*Thank You For Using The bot 😀😀*'''
+         \n🧐*Account Type*🧐: {acc_type(user.is_private)}\n🤪*Bio🤪*: {user.biography}\n👀*Midia*👀 {user.mediacount} \n\n*Thank You For Using The bot എന്നെ കൂടി follow ചെയ്യാൻ പറഞ്ഞേക്ക് 😅😅🤣😀😀 @dev_mirshad *'''
        
         context.bot.send_photo(
             chat_id=chat_id, photo=user.profile_pic_url,
@@ -71,7 +71,7 @@ def username(update, context):
         msg.edit_text("finished.")
         time.sleep(5)
     except Exception:
-        msg.edit_text("Try again 😕😕 Check the username correctly")
+        msg.edit_text("Try again 😕😕 Check the username correctly എന്തേലും പ്രശ്നം ഉണ്ടങ്കിൽ admin @dev_mirshad നെ അറിയിച്ചേക്ക് അവനല്ലേ ഉണ്ടാക്കിയെ 🤣🤣😂 അതോണ്ടാ ")
 
 
 
